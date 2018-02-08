@@ -1,0 +1,20 @@
+<div *ngIf="hero">
+
+  <br>
+
+  <h3>Detalle a partir del componente HeroDetail:</h3>
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div>
+    <span>Id: </span>{{hero.id}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="hero.name" placeholder="name" />
+    </label>
+  </div>
+
+</div>
+
+<button (click)="save()">save</button>
+<br>
+<button (click)="goBack()">go back</button>

@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <h1>{{ title }}</h1>
+
+  <!-- Mostrar el componente HeroesComponent por su element selector id-->
+  <!-- <app-heroes></app-heroes> -->
+
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+
+  <!-- The RouterOutlet is one of the router directives that became available to the AppComponent because AppModule imports AppRoutingModule which exported RouterModule -->
+  <router-outlet></router-outlet>
+
+  <!-- Mostrar el componente MessagesComponent-->
+  <app-messages></app-messages>

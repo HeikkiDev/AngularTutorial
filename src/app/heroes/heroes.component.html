@@ -1,0 +1,63 @@
+<!-- {{...}} es un Binding One Way-->
+<!-- <h2>{{hero.name | uppercase}} Details</h2>
+<div><span>Id: </span>{{hero.id}}</div>
+<div>
+  <label>Name:
+    <input [(ngModel)]="hero.name" placeholder="name...">
+  </label>
+</div> -->
+<!-- [(ngModel)]="model.property" es un Binding Two Way-->
+
+
+<h2>My Mock Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
+
+<!-- Usando un click event handler -->
+<!-- <ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul> -->
+
+<!-- Usando routerLink al módulo HeroDetailComponent -->
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+  </li>
+</ul>
+
+
+<br>
+
+<!-- Si los binding intentan leer la porpiedad selectedHero.name por ejemplo
+     y selectedHero es undefined peta. Con este *ngIf evitamos eso. -->
+<!-- <div *ngIf="selectedHero">
+
+    <h3>Detalle a partir de un *ngFor a pelo:</h3>
+
+    <h2>{{ selectedHero.name |uppercase }} Details</h2>
+    <div><span>Id: </span>{{selectedHero.id}}</div>
+    <div>
+      <label>Name:
+        <input [(ngModel)]="selectedHero.name" placeholder="name...">
+      </label>
+    </div>
+
+</div> -->
+
+<!-- Usando en componente HeroDetail para mostrar el detalle :D -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
